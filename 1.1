@@ -1,0 +1,31 @@
+#include "stdio.h"
+int fun(int k)
+{
+	int x=1;
+	while(k!=1)
+	{
+		if(k%2==0)k=k/2;
+		else k=k*3+1;
+		x++;              //x作为计数器，记录循环节长度
+	}
+	return x;
+}
+int main()
+{
+    int i,j,i1,j1,t;
+    while(scanf("%d %d",&i,&j)==2)
+	{
+		int max=0;
+		i1=i; j1=j;
+		if(i>j)
+		{
+			i1=j;j1=i;
+		}
+    for(t=i1;t<=j1;t++)
+    {
+		if(fun(t)>max)max=fun(t);
+    }
+    printf("%d %d %d\n",i,j,max);
+	}
+    return 0;
+}
